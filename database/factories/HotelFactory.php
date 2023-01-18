@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Chairman;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -18,6 +19,9 @@ class HotelFactory extends Factory
     {
         return [
             //
+            'hotel_name' => $this->faker->name,
+            'address' =>$this->faker->address,
+            'chairman_id'=> Chairman::first(),
         ];
     }
 }

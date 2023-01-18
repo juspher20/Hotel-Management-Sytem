@@ -18,6 +18,8 @@ class DepartmentFactory extends Factory
     {
         return [
             //
+            'hotel_name' => $this->faker->name,
+            'department_name' =>$this->faker->name,
         ];
     }
 }

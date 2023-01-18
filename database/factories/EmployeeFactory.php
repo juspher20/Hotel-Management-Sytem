@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Employee;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -18,6 +19,18 @@ class EmployeeFactory extends Factory
     {
         return [
             //
+            'hotel_name' => $this->faker->name,
+            'department_name' =>$this->faker->name,
+            'full_name' => $this->faker->name,
+            'age' => $this->faker->randomDigit(),
+            'address' => $this->faker->address,
+            'email' => $this->faker->email,
+            'email_verified_at' => now(),
+            'password' => $this->faker->password,
+            'contact_number' => $this->faker->phoneNumber,
+            'role' => $this->faker->name,
+            'salary' => $this->faker->randomFloat(2, 40, 500),
+            'status' => $this->faker->name,
         ];
     }
 }

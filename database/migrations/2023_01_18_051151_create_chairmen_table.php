@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('chairmen', function (Blueprint $table) {
             $table->id();
+            $table->string('hotel_name');
             $table->string('full_name');
             $table->integer('age');
             $table->string('address');
