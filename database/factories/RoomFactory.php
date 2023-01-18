@@ -18,6 +18,9 @@ class RoomFactory extends Factory
     {
         return [
             //
+            'type' => $this->faker->name,
+            'price_per_room' => $this->faker->randomFloat(2, 40, 50000),
+            'maximum_costumer_per_room' => $this->faker->randomDigit,
         ];
     }
 }

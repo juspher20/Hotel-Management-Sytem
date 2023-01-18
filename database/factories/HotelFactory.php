@@ -21,6 +21,8 @@ class HotelFactory extends Factory
             //
             'hotel_name' => $this->faker->name,
             'address' =>$this->faker->address,
+            'sales_per_year' => $this->faker->randomFloat(3,1000,100000000),
+            'total_rooms' => $this->faker->randomDigit,
             'chairman_id'=> Chairman::first(),
         ];
     }

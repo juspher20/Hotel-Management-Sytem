@@ -19,4 +19,8 @@ class Hotel extends Model
         return $this->belongsTo(Chairman::class,'chairman_id');
     }
 
+    public function room(){
+        return $this->belongsToMany(Room::class);
+    }
+
 }

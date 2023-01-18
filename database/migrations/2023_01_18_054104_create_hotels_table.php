@@ -18,6 +18,8 @@ return new class extends Migration
             $table->string('hotel_name');
             $table->unsignedBigInteger('chairman_id');
             $table->string('address');
+            $table->double('sales_per_year');
+            $table->integer('total_rooms');
             $table->timestamps();
         });
     }
