@@ -19,7 +19,7 @@ class Hotel extends Model
         return $this->belongsTo(Chairman::class,'chairman_id');
     }
 
-    public function room(){
+    public function rooms(){
         return $this->belongsToMany(Room::class);
     }
 
