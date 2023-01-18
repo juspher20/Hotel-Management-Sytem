@@ -13,12 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('chairman_hotel', function (Blueprint $table) {
+        Schema::create('rooms', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('chairman_id');
-            $table->unsignedBigInteger('hotel_id');
-            $table->integer('total_employee');
-            $table->integer('total_department');
             $table->timestamps();
         });
     }
@@ -30,6 +26,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('chairman_hotel');
+        Schema::dropIfExists('rooms');
     }
 };
