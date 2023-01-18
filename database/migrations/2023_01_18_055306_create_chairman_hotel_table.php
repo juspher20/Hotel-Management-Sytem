@@ -15,6 +15,10 @@ return new class extends Migration
     {
         Schema::create('chairman_hotel', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('chairman_id');
+            $table->unsignedBigInteger('hotel_id');
+            $table->integer('total_employee');
+            $table->integer('total_department');
             $table->timestamps();
         });
     }
