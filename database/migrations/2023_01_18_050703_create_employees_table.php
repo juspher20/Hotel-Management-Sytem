@@ -25,6 +25,7 @@ return new class extends Migration
             $table->string('password');
             $table->integer('contact_number');
             $table->string('role');
+            $table->unsignedBigInteger('department_id');
             $table->double('salary');
             $table->string('status');
             $table->timestamps();

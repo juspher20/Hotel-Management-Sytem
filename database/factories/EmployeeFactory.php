@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Department;
 use App\Models\Employee;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -27,10 +28,11 @@ class EmployeeFactory extends Factory
             'email' => $this->faker->email,
             'email_verified_at' => now(),
             'password' => $this->faker->password,
-            'contact_number' => $this->faker->phoneNumber,
+            'contact_number' => $this->faker->randomFloat(11),
             'role' => $this->faker->name,
             'salary' => $this->faker->randomFloat(2, 40, 500),
             'status' => $this->faker->name,
+            'department_id' => Department::first()
         ];
     }
 }
