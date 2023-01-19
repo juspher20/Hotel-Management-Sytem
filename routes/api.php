@@ -25,14 +25,14 @@ Route::middleware(['auth:sanctum', 'ver'])->get(
     }
 );
 
-Route::post("hotel/login", [AuthenticateController::class, 'login']);
+Route::post("hotels/login", [AuthenticateController::class, 'login']);
 
 Route::middleware('auth:sanctum')->group(function () {
 
-    Route::get("hotel/employee", [EmployeeController::class, 'index']);
-    Route::post("hotel/create", [EmployeeController::class, 'store']);
-    Route::get('hotel/{id}', [EmployeeController::class, 'show']);
-    Route::delete('hotel/delete/{id}', [EmployeeController::class, 'destroy']);
-    Route::put('hotel/update/{id}', [EmployeeController::class, 'update']);
+    Route::get("hotels/", [EmployeeController::class, 'index']);
+    Route::post("hotels/", [EmployeeController::class, 'store']);
+    Route::get('hotels/{id}', [EmployeeController::class, 'show']);
+    Route::delete('hotels/{id}', [EmployeeController::class, 'destroy']);
+    Route::put('hotels/{id}', [EmployeeController::class, 'update']);
 
 });
