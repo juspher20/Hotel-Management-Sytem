@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::middleware(['auth:sanctum', 'ver'])->get(
-    '/hotel/email',
+    '/hotels',
     function (Request $request) {
         return $request->user();
     }
@@ -29,7 +29,7 @@ Route::post("hotels/login", [AuthenticateController::class, 'login']);
 
 Route::middleware('auth:sanctum')->group(function () {
 
-    Route::get("hotels/", [EmployeeController::class, 'index']);
+    Route::get("hotels", [EmployeeController::class, 'index']);
     Route::post("hotels/", [EmployeeController::class, 'store']);
     Route::get('hotels/{id}', [EmployeeController::class, 'show']);
     Route::delete('hotels/{id}', [EmployeeController::class, 'destroy']);

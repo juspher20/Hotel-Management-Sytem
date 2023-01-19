@@ -15,7 +15,12 @@ class EmployeeController extends Controller
      */
     public function index()
     {
-        return Employee::all();
+        $employees = Employee::all();
+        return response()->json([
+            'status' => true,
+            'message' => 'Employee retrieved successfully',
+            'data' => $employees
+        ], 201);
     }
 
     /**
@@ -35,20 +40,29 @@ class EmployeeController extends Controller
      */
     public function store(Request $request)
     {
-        return Employee::create([
-        'hotel_name' => $request->hotel_name,
-        'department_name' => $request->department_name,
-        'department_id'=> $request->department_id,
-        'full_name' => $request->full_name,
-        'age' => $request->age,
-        'address' => $request->address,
-        'email' => $request->email,
-        'password' => $request->password,
-        'contact_number' => $request->contact_number,
-        'role' => $request->role,
-        'salary' => $request->salary,
-        'status' => $request->status,
+
+        $data = $request->validate([
+            'hotel_name' => 'required|string|min:5|max:15',
+            'department_name' => 'required|string|min:5|max:20',
+            'department_id' => 'required|integer',
+            'full_name' => 'required|string|min:5|max:50',
+            'age' => 'required|integer',
+            'address' => 'required',
+            'email' => 'required|email',
+            'password' => 'required|min:8|max:50',
+            'contact_number' => 'required|integer',
+            'role' => 'required',
+            'salary' => 'required',
+            'status' => 'required|string',
         ]);
+
+        $employees = Employee::create($data);
+
+        return response()->json([
+            'status' => true,
+            'message' => 'Employee created successfully',
+            'data' => $employees
+        ], 201);
     }
 
     /**
@@ -59,7 +73,21 @@ class EmployeeController extends Controller
      */
     public function show($id)
     {
-        return Employee::findorFail($id);
+        $employees = Employee::find($id);
+        if ($employees) {
+            return response()->json([
+                'status' => true,
+                'message' => 'Employee found successfully',
+                'data' => $employees
+            ], 201);
+        } else {
+            return response()->json([
+                'status' => false,
+                'message' => 'Employee not found',
+                'data' => null
+            ], 404);
+        }
+
     }
 
     /**
@@ -82,20 +110,38 @@ class EmployeeController extends Controller
      */
     public function update(Request $request, $id)
     {
-        Employee::find($id)->update([
-            'hotel_name' => $request->hotel_name,
-            'department_name' => $request->department_name,
-            'department_id' => $request->department_id,
-            'full_name' => $request->full_name,
-            'age' => $request->age,
-            'address' => $request->address,
-            'email' => $request->email,
-            'password' => $request->password,
-            'contact_number' => $request->contact_number,
-            'role' => $request->role,
-            'salary' => $request->salary,
-            'status' => $request->status,
+
+        $data = $request->validate([
+            'hotel_name' => 'required|string|min:5|max:15',
+            'department_name' => 'required|string|min:5|max:20',
+            'department_id' => 'required|integer',
+            'full_name' => 'required|string|min:5|max:50',
+            'age' => 'required|integer',
+            'address' => 'required',
+            'email' => 'required|email',
+            'password' => 'required|min:8|max:50',
+            'contact_number' => 'required|integer',
+            'role' => 'required',
+            'salary' => 'required',
+            'status' => 'required|string',
         ]);
+
+        $employees = Employee::find($id);
+
+        if ($employees) {
+            $employees->update($data);
+            return response()->json([
+                'status' => true,
+                'message' => 'Successfully Updated',
+                'data' => $employees
+            ], 201);
+        } else {
+            return response()->json([
+                'status' => false,
+                'message' => 'Employee not found',
+                'data' => null
+            ], 404);
+        }
     }
 
     /**
@@ -106,7 +152,22 @@ class EmployeeController extends Controller
      */
     public function destroy($id)
     {
-        return Employee::find($id)->delete();
+        $employees = Employee::find($id);
+
+        if ($employees) {
+            $employees->delete();
+            return response()->json([
+                'status' => true,
+                'message' => 'Employee deleted successfully',
+                'data' => null
+            ]);
+        } else {
+            return response()->json([
+                'status' => false,
+                'message' => 'Employee not found',
+                'data' => null
+            ], 404);
+        }
     }
 
 }
