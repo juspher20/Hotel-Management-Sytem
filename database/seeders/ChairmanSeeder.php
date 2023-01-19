@@ -28,7 +28,7 @@ class ChairmanSeeder extends Seeder
             'contact_number' => '+639132423',
             'status' => 'active',
             'created_at' => now(),
-            'updated_at'=>now()
+            'updated_at' => now()
         ]);
 
         // \App\Models\Chairman::factory()->create([

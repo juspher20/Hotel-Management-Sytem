@@ -19,39 +19,39 @@ class EmployeeSeeder extends Seeder
     {
         //
         // DB::table('employees')->insert([
-        //     'hotel_name' => 'Hotel name 1',
+        //     'hotel_name' => 'Hotel 1',
         //     'department_name' => 'IT Department',
-        //     'department_id' => Department::first(),
-        //     'full_name' => 'Juspher Balangyao',
-        //     'age' => 21,
+        //     'department_id' => 1,
+        //     'full_name' => 'John Doe 1',
+        //     'age' => 35,
         //     'address' => 'Earth',
-        //     'email' => 'juspher.balangyao@gmail.com',
+        //     'email' => 'johndoe1@gmail.com',
         //     'email_verified_at' => now(),
         //     'password' => Hash::make(12345678),
-        //     'contact_number' => '+639124223',
-        //     'role' => 'Fullstack Developer',
+        //     'contact_number' => '+63912423',
+        //     'role' =>'Fullstack Developer',
         //     'salary' => 57000,
         //     'status' => 'active',
         //     'created_at' => now(),
-        //     'updated_at' => now()
+        //     'updated_at'=>now()
         // ]);
 
         \App\Models\Employee::factory()->create([
-            'hotel_name' => 'Hotel Name 2',
-            'department_name' => 'Management Department',
+            'hotel_name' => 'Hotel 1',
+            'department_name' => 'IT Department',
             'department_id' => Department::first(),
-            'full_name' => 'Alyssa Cazarte',
-            'age' => 21,
-            'address' => 'Cebu City, Philippines',
-            'email' => '1allysa.cazerte@gmail.com',
+            'full_name' => 'John Doe 1',
+            'age' => 35,
+            'address' => 'Earth',
+            'email' => 'johndoe1@gmail.com',
             'email_verified_at' => now(),
-            'password' => Hash::make(39232),
-            'contact_number' => '+639124323',
-            'role' => 'Senior Manager',
+            'password' => Hash::make(12345678),
+            'contact_number' => '+63912423',
+            'role' =>'Fullstack Developer',
             'salary' => 57000,
             'status' => 'active',
             'created_at' => now(),
-            'updated_at' => now()
+            'updated_at'=>now()
         ]);
     }
 }
