@@ -26,7 +26,7 @@ class Employee extends Model
         'status'
     ];
 
-    public function department(){
+    public function departments(){
         return $this->belongsTo(Department::class);
     }
 }
