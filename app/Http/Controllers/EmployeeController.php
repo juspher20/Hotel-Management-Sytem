@@ -85,6 +85,7 @@ class EmployeeController extends Controller
         Employee::find($id)->update([
             'hotel_name' => $request->hotel_name,
             'department_name' => $request->department_name,
+            'department_id' => $request->department_id,
             'full_name' => $request->full_name,
             'age' => $request->age,
             'address' => $request->address,
