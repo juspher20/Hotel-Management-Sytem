@@ -13,7 +13,7 @@ class Department extends Model
         'department_name',
     ];
 
-    public function employees(){
+    public function employee(){
         return $this->hasMany(Employee::class);
     }
 }
