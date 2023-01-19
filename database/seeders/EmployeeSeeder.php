@@ -20,6 +20,7 @@ class EmployeeSeeder extends Seeder
         DB::table('employees')->insert([
             'hotel_name' => 'Hotel 1',
             'department_name' => 'IT Department',
+            'department_id'=> 2,
             'full_name' => 'John Doe 1',
             'age' => 35,
             'address' => 'Earth',
