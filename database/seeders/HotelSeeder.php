@@ -23,5 +23,13 @@ class HotelSeeder extends Seeder
             'created_at' => now(),
             'updated_at'=>now()
         ]);
+
+        // \App\Models\Department::factory()->create([
+        //     'hotel_name' => 'Hotel 1',
+        //     'chairman_id'=> Chairman::first(),
+        //     'created_at' => now(),
+        //     'updated_at'=>now()
+        // ]);
+
     }
 }

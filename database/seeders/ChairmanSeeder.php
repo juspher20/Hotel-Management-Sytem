@@ -30,5 +30,19 @@ class ChairmanSeeder extends Seeder
             'created_at' => now(),
             'updated_at'=>now()
         ]);
+
+        // \App\Models\Chairman::factory()->create([
+        //     'hotel_name' => 'Hotel',
+        //     'full_name' => 'Mike Santos',
+        //     'age' => 35,
+        //     'address' => 'Earth',
+        //     'email' => 'mikesantos123@gmail.com',
+        //     'email_verified_at' => now(),
+        //     'password' => Hash::make(123432342),
+        //     'contact_number' => '+639132423',
+        //     'status' => 'active',
+        //     'created_at' => now(),
+        //     'updated_at'=>now()
+        // ]);
     }
 }

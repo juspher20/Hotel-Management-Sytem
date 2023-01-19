@@ -17,7 +17,14 @@ class DepartmentSeeder extends Seeder
     public function run()
     {
         //
-        DB::table('employees')->insert([
+        // DB::table('employees')->insert([
+        //     'hotel_name' => 'Hotel 1',
+        //     'department_name' => 'IT Department',
+        //     'created_at' => now(),
+        //     'updated_at'=>now()
+        // ]);
+
+        \App\Models\Department::factory()->create([
             'hotel_name' => 'Hotel 1',
             'department_name' => 'IT Department',
             'created_at' => now(),
